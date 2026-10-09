@@ -1,0 +1,156 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nasha Mukt Bharat</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+@page{size:210mm 297mm;margin:0}
+:root{--blue:#0a2a6b;--navy:#061a45;--green:#17883e;--dgreen:#0e6a2f;--orange:#f47b20;--mint:#eaf6ee}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:210mm;height:297mm;background:#fff}
+body{font-family:'Poppins','Noto Sans Devanagari',sans-serif;color:var(--navy);position:relative;overflow:hidden}
+.hi{font-family:'Noto Sans Devanagari','Poppins',sans-serif}
+/* header */
+.top{position:absolute;left:0;top:0;width:210mm;height:40mm;background:linear-gradient(100deg,var(--navy),var(--blue));color:#fff;display:flex;align-items:center;padding:0 12mm;gap:6mm}
+.top:after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2mm;background:linear-gradient(90deg,var(--orange) 0 33%,#fff 33% 66%,var(--green) 66%)}
+.logo{width:24mm;height:24mm;border-radius:50%;background:#fff;border:1.2mm solid var(--orange);display:flex;align-items:center;justify-content:center;flex:none;text-align:center;color:var(--blue);font-size:7pt;font-weight:700;line-height:1.1}
+.logo span{border:.4mm dashed #9aa7c7;border-radius:50%;width:18mm;height:18mm;display:flex;align-items:center;justify-content:center;padding:2mm}
+.inst .en{font-size:17.5pt;font-weight:800;letter-spacing:.2px;line-height:1.15}
+.inst .hi{font-size:17pt;font-weight:700;color:#ffd9b0;margin-top:1.5mm;line-height:1.3}
+/* headline */
+.head{position:absolute;top:43mm;left:0;width:210mm;text-align:center}
+.eng{font-size:41pt;font-weight:800;line-height:1.05;color:var(--blue);letter-spacing:.5px}
+.eng b{color:var(--green)}
+.hin{font-size:45pt;font-weight:800;line-height:1.25;color:var(--green)}
+.hin b{color:var(--blue)}
+.sub{display:inline-block;margin-top:1mm;background:var(--orange);color:#fff;border-radius:10mm;padding:2mm 8mm;font-weight:700;line-height:1.3}
+.sub .e{font-size:13.5pt}.sub .hi{font-size:13pt;font-weight:700}
+/* art */
+.art{position:absolute;left:10mm;top:105mm;width:190mm;height:91mm;border-radius:5mm;overflow:hidden;border:.8mm solid var(--blue)}
+.art svg{display:block;width:100%;height:100%}
+/* messages */
+.msgs{position:absolute;left:10mm;top:200mm;width:190mm;display:grid;grid-template-columns:1fr 1fr;gap:2.6mm}
+.m{background:var(--mint);border-left:2mm solid var(--green);border-radius:2mm;padding:1.6mm 3.5mm;display:flex;gap:3mm;align-items:center}
+.m:nth-child(2){border-color:var(--orange)}.m:nth-child(3){border-color:var(--blue)}
+.m .n{flex:none;width:8mm;height:8mm;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;font-size:11pt;display:flex;align-items:center;justify-content:center}
+.m:nth-child(1) .n{background:var(--green)}.m:nth-child(2) .n{background:var(--orange)}
+.m .e{font-size:10.6pt;font-weight:700;color:var(--blue);line-height:1.25}
+.m .hi{font-size:10.6pt;font-weight:500;color:var(--dgreen);line-height:1.35}
+.m.wide{grid-column:1/3;background:var(--blue);border-color:var(--orange);color:#fff;justify-content:center;text-align:center}
+.m.wide .n{background:var(--orange)}
+.m.wide .e{color:#fff;font-size:11.5pt}.m.wide .hi{color:#c9f0d4;font-size:11.5pt}
+/* footer */
+.help{position:absolute;left:10mm;top:251mm;width:190mm;height:20mm;border:.7mm solid var(--blue);border-radius:3mm;display:flex;overflow:hidden}
+.help .l{background:var(--blue);color:#fff;width:52mm;padding:2mm 4mm;display:flex;flex-direction:column;justify-content:center}
+.help .l .e{font-size:12pt;font-weight:800}.help .l .hi{font-size:11pt;font-weight:600;color:#ffd9b0}
+.help .r{flex:1;padding:1.5mm 5mm;display:flex;flex-direction:column;justify-content:center;gap:2.2mm;font-size:8.5pt;font-weight:600;color:var(--blue)}
+.line{display:flex;align-items:flex-end;gap:2mm}.line i{flex:1;border-bottom:.35mm solid var(--blue);height:5mm}
+.slogan{position:absolute;left:0;top:274mm;width:210mm;height:23mm;background:linear-gradient(100deg,var(--dgreen),var(--green));color:#fff;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.slogan:before{content:"";position:absolute;left:0;top:0;width:100%;height:1.6mm;background:var(--orange)}
+.slogan .e{font-size:17pt;font-weight:800;margin-top:1mm}.slogan .hi{font-size:15pt;font-weight:700;color:#fff3d6;line-height:1.3}
+</style></head><body>
+
+<div class="top">
+  <div class="logo"><span>INSTITUTE<br>LOGO</span></div>
+  <div class="inst">
+    <div class="en">National Institute of Technology Sikkim</div>
+    <div class="hi">राष्ट्रीय प्रौद्योगिकी संस्थान सिक्किम</div>
+  </div>
+</div>
+
+<div class="head">
+  <div class="eng">NASHA MUKT <b>BHARAT</b></div>
+  <div class="hin">नशा मुक्त <b>भारत</b></div>
+  <div class="sub"><div class="e">Say No to Drugs – Choose Life</div><div class="hi">नशे को ना कहें – जीवन चुनें</div></div>
+</div>
+
+<div class="art">
+<svg viewBox="0 0 760 360" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="sky" x1="0" x2="1"><stop offset="0" stop-color="#050f2e"/><stop offset=".3" stop-color="#16346f"/><stop offset=".6" stop-color="#6fb7c9"/><stop offset="1" stop-color="#ffe9b0"/></linearGradient>
+  <radialGradient id="glow" cx="500" cy="150" r="260" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fffbe6" stop-opacity="1"/><stop offset=".35" stop-color="#ffe08a" stop-opacity=".75"/><stop offset="1" stop-color="#ffe08a" stop-opacity="0"/></radialGradient>
+  <linearGradient id="shade" x1="0" x2="1"><stop offset="0" stop-color="#02060f" stop-opacity=".97"/><stop offset="1" stop-color="#02060f" stop-opacity="0"/></linearGradient>
+  <g id="ad"><circle cy="-60" r="9"/><path d="M-13 -48Q0 -53 13 -48L11 -12H-11Z"/><rect x="-9" y="-14" width="7" height="24" rx="2"/><rect x="2" y="-14" width="7" height="24" rx="2"/></g>
+  <g id="wm"><circle cy="-58" r="8.5"/><path d="M-9 -47Q0 -52 9 -47L19 8H-19Z"/></g>
+</defs>
+<rect width="760" height="360" fill="url(#sky)"/>
+<g stroke="#fff3c4" stroke-width="5" opacity=".28">
+  <line x1="500" y1="150" x2="500" y2="-20"/><line x1="500" y1="150" x2="620" y2="-10"/><line x1="500" y1="150" x2="380" y2="-10"/>
+  <line x1="500" y1="150" x2="720" y2="40"/><line x1="500" y1="150" x2="290" y2="30"/><line x1="500" y1="150" x2="760" y2="150"/><line x1="500" y1="150" x2="700" y2="280"/>
+</g>
+<rect width="760" height="360" fill="url(#glow)"/>
+<circle cx="500" cy="150" r="46" fill="#fff6d6" opacity=".9"/>
+<!-- hills -->
+<path d="M0 300Q180 270 360 300T760 285V360H0Z" fill="#1a8f45"/>
+<path d="M0 325Q200 300 400 325T760 315V360H0Z" fill="#0e6a2f"/>
+<!-- family & community on the right -->
+<g fill="#0a4a27" transform="translate(0,0)">
+  <use href="#ad" transform="translate(600,300) scale(1.1)"/>
+  <use href="#wm" transform="translate(640,300) scale(1.05)"/>
+  <use href="#ad" transform="translate(675,301) scale(.62)"/>
+  <use href="#wm" transform="translate(705,301) scale(.75)"/>
+  <path d="M608 258L626 262M650 262L666 276M676 270L690 272" stroke="#0a4a27" stroke-width="5" fill="none" stroke-linecap="round"/>
+</g>
+<g fill="#2c7f5a" opacity=".85">
+  <use href="#ad" transform="translate(560,292) scale(.8)"/><use href="#wm" transform="translate(735,293) scale(.7)"/>
+</g>
+<!-- supporters left, reaching toward the person -->
+<g fill="#7fd0b0" opacity=".9">
+  <use href="#ad" transform="translate(300,306) scale(.85)"/>
+  <use href="#wm" transform="translate(262,308) scale(.85)"/>
+</g>
+<!-- shadow of addiction -->
+<path d="M0 0H210Q250 40 215 85Q300 110 240 150Q290 190 235 220Q250 270 190 300Q120 330 0 330Z" fill="url(#shade)"/>
+<path d="M0 0H260Q330 60 290 100Q350 130 300 160Q250 185 290 215Q220 240 150 230Q90 260 0 250Z" fill="#02060f" opacity=".5"/>
+<g stroke="#02060f" stroke-width="10" stroke-linecap="round" fill="none" opacity=".75">
+  <path d="M240 80Q290 60 310 95"/><path d="M230 160Q280 150 296 180"/><path d="M205 240Q260 250 285 220"/>
+</g>
+<!-- broken chain from shadow to left wrist -->
+<g fill="none" stroke="#c7ccd6" stroke-width="5">
+  <ellipse cx="195" cy="118" rx="13" ry="7" transform="rotate(-20 195 118)"/><ellipse cx="217" cy="110" rx="13" ry="7" transform="rotate(25 217 110)"/>
+  <ellipse cx="240" cy="108" rx="13" ry="7" transform="rotate(-15 240 108)"/><ellipse cx="262" cy="116" rx="13" ry="7" transform="rotate(30 262 116)"/>
+</g>
+<!-- falling broken links -->
+<g fill="none" stroke="#9fa6b5" stroke-width="5">
+  <ellipse cx="318" cy="168" rx="12" ry="6.5" transform="rotate(50 318 168)"/><ellipse cx="300" cy="214" rx="12" ry="6.5" transform="rotate(-30 300 214)"/>
+  <ellipse cx="636" cy="130" rx="12" ry="6.5" transform="rotate(35 636 130)"/><ellipse cx="660" cy="190" rx="12" ry="6.5" transform="rotate(-50 660 190)"/><ellipse cx="624" cy="238" rx="12" ry="6.5" transform="rotate(20 624 238)"/>
+</g>
+<!-- the young person (center-right glow) -->
+<g transform="translate(500,0)">
+  <!-- legs -->
+  <g stroke="#14327a" stroke-width="19" stroke-linecap="round"><line x1="-14" y1="240" x2="-22" y2="312"/><line x1="14" y1="240" x2="24" y2="312"/></g>
+  <ellipse cx="-27" cy="315" rx="15" ry="6" fill="#222"/><ellipse cx="30" cy="315" rx="15" ry="6" fill="#222"/>
+  <!-- arms raised -->
+  <g stroke="#f47b20" stroke-width="17" stroke-linecap="round"><line x1="-26" y1="182" x2="-78" y2="112"/><line x1="26" y1="182" x2="84" y2="106"/></g>
+  <!-- torso -->
+  <path d="M-30 176Q0 164 30 176L26 250H-26Z" fill="#f47b20"/>
+  <rect x="-3" y="150" width="6" height="20" fill="#d9a066"/>
+  <!-- hands & broken cuffs -->
+  <circle cx="-80" cy="108" r="10" fill="#d9a066"/><circle cx="86" cy="102" r="10" fill="#d9a066"/>
+  <g fill="none" stroke="#c7ccd6" stroke-width="6" stroke-linecap="round"><path d="M-92 118A15 15 0 1 1 -68 122"/><path d="M74 112A15 15 0 1 1 98 108"/></g>
+  <!-- head -->
+  <circle cy="132" r="22" fill="#d9a066"/>
+  <path d="M-23 130Q-22 106 0 108Q23 106 23 130Q10 118 -8 120Q-18 121 -23 130Z" fill="#1b1b24"/>
+  <path d="M-8 138Q0 145 8 138" stroke="#7a4a1c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- sparkles of hope -->
+  <g fill="#fff" opacity=".95"><path d="M-110 70l4 11 11 4-11 4-4 11-4-11-11-4 11-4z"/><path d="M120 60l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/><path d="M-60 40l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></g>
+</g>
+</svg>
+</div>
+
+<div class="msgs">
+  <div class="m"><div class="n">1</div><div><div class="e">Drugs destroy dreams</div><div class="hi">नशा सपनों को नष्ट करता है</div></div></div>
+  <div class="m"><div class="n">2</div><div><div class="e">Protect your family and future</div><div class="hi">अपने परिवार और भविष्य की रक्षा करें</div></div></div>
+  <div class="m"><div class="n">3</div><div><div class="e">Seek help, stay strong</div><div class="hi">मदद लें, मजबूत रहें</div></div></div>
+  <div class="m"><div class="n" style="background:var(--green)">4</div><div><div class="e">Reach out. You are not alone.</div><div class="hi">आप अकेले नहीं हैं।</div></div></div>
+  <div class="m wide"><div class="n">★</div><div><div class="e">Together we can make Sikkim Nasha Mukt</div><div class="hi">मिलकर हम सिक्किम को नशा मुक्त बना सकते हैं</div></div></div>
+</div>
+
+<div class="help">
+  <div class="l"><div class="e">HELPLINE / SUPPORT</div><div class="hi">हेल्पलाइन / सहायता</div></div>
+  <div class="r">
+    <div class="line">Helpline / हेल्पलाइन: <i></i></div>
+    <div class="line">Local Support / स्थानीय सहायता: <i></i></div>
+  </div>
+</div>
+
+<div class="slogan"><div class="e">Be the Change – Stay Drug Free</div><div class="hi">बदलाव बनें – नशा मुक्त रहें</div></div>
+</body></html>
