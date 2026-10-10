@@ -68,12 +68,12 @@ def sponsors(x, y, h=58, bg="#fff", label="#6b6478", stroke=None, rx=None):
     """Chip with 'Powered by' + Quarks + Domino's logos. Returns (markup, width)."""
     lh = h * .46
     qw, dw = lh * 600 / 147, lh * 1.06 * 700 / 152
-    lab = width("POWERED BY", "SpaceMono-700.ttf", 10, 1.6)
+    lab = width("POWERED BY", "SpaceMono-700.ttf", 12, 1.6)
     w = 22 + lab + 22 + qw + 22 + 1.5 + 22 + dw + 22
     st = f' stroke="{stroke}" stroke-width="1.5"' if stroke else ""
     return f'''<g id="sponsors" transform="translate({x},{y})">
 <rect width="{w:.1f}" height="{h}" rx="{rx if rx is not None else h / 2}" fill="{bg}"{st}/>
-<text x="22" y="{h / 2 + 3.5}" font-family="Space Mono" font-weight="700" font-size="10" letter-spacing="1.6" fill="{label}">POWERED BY</text>
+<text x="22" y="{h / 2 + 4.2}" font-family="Space Mono" font-weight="700" font-size="12" letter-spacing="1.6" fill="{label}">POWERED BY</text>
 {img("quarks", round(44 + lab, 1), (h - lh) / 2, round(qw, 1), "sponsor-quarks")}
 <rect x="{66 + lab + qw:.1f}" y="{h * .25}" width="1.5" height="{h * .5}" fill="{label}" opacity=".35"/>
 {img("dominos", round(89.5 + lab + qw, 1), (h - lh * 1.06) / 2, round(dw, 1), "sponsor-dominos")}
@@ -176,96 +176,153 @@ def p1():
         stroke = f' stroke="{INK}" stroke-width="2"' if bg == PAPER else ""
         al += f'''<g transform="rotate({rot} {x + w / 2} {y + 22})"><rect x="{x:.0f}" y="{y}" width="{w:.0f}" height="44" fill="{bg}"{stroke} style="mix-blend-mode:multiply"/>
 <text x="{x + 14:.0f}" y="{y + 36}" font-family="Anton" font-size="34" letter-spacing="1" fill="{fg}">{t}</text></g>'''
-    sp, _ = sponsors(58, 975, 58, "#fff", stroke=INK, rx=4)
+    sp, _ = sponsors(58, 970, 64, "#fff", stroke=INK, rx=4)
     body = f'''<rect width="{S}" height="{S}" fill="{PAPER}"/>
 <g id="riso-blossom">{halftone(790, 330, 470, 11, 5.2, PINK, 15, 1.3, clip="bloom-clip")}
 {blossom(804, 342, 330, "none", rot=8, stroke=BLUE, sw=3, blend="multiply")}</g>
 {halftone(205, 790, 210, 10, 4.6, YEL, 45, 1.1, id="riso-sun")}
 <g id="masthead">{img("udgam-logo", 46, 30, 215)}
-{torn(752, 40, 288, 80, PAPER, -1.5, seed=21)}
-<g font-family="Space Mono" font-weight="700" font-size="13" letter-spacing="2.4" fill="{INK}" text-anchor="end">
-<text x="1024" y="62">NIT SIKKIM PRESENTS</text><text x="1024" y="84">THE ANNUAL CULTURAL FEST</text><text x="1024" y="106" fill="{PINK}">ISSUE Nº 2K26</text></g></g>
+{torn(690, 34, 350, 98, PAPER, -1.5, seed=21)}
+<g font-family="Space Mono" font-weight="700" font-size="17" letter-spacing="2" fill="{INK}" text-anchor="end">
+<text x="1026" y="64">NIT SIKKIM PRESENTS</text><text x="1026" y="90">ANNUAL CULTURAL FEST</text><text x="1026" y="116" fill="{PINK}">ISSUE Nº 2K26</text></g></g>
 <g id="headline-UDGAM">{tiles}</g>
 {tape(150, 168, 120, -18)}{tape(845, 404, 110, 14)}
 <g id="year-label" transform="rotate(3 840 470)">{torn(700, 438, 320, 92, INK, 0, seed=11)}
 <text x="860" y="510" text-anchor="middle" font-family="Space Mono" font-weight="700" font-size="74" letter-spacing="2" fill="{YEL}">2K26</text></g>
 <text id="tagline" x="66" y="512" font-family="Caveat" font-weight="700" font-size="88" fill="{PINK}" transform="rotate(-5 250 490)" style="mix-blend-mode:multiply">Chase the Bloom</text>
 <g id="hook"><text x="60" y="610" font-family="Fraunces" font-style="italic" font-size="50" fill="{INK}">The bloom is back —</text>
-<text x="60" y="648" font-family="Inter Tight" font-weight="600" font-size="22" fill="{INK}" opacity=".8">and this time it brought a soundtrack.</text></g>
+<text x="60" y="648" font-family="Inter Tight" font-weight="600" font-size="25" fill="{INK}">and this time it brought a soundtrack.</text></g>
 <g id="ticket" transform="rotate(-3 260 800)">
 <path d="M60 690 H460 V760 a18 18 0 0 0 0 36 V880 H60 V796 a18 18 0 0 0 0 -36Z" fill="{BLUE}" style="mix-blend-mode:multiply"/>
 <line x1="372" y1="702" x2="372" y2="868" stroke="{PAPER}" stroke-width="2" stroke-dasharray="6 6"/>
-<text x="84" y="724" font-family="Space Mono" font-weight="700" font-size="13" letter-spacing="3" fill="{YEL}">ADMIT ALL · 3 DAYS</text>
+<text x="84" y="724" font-family="Space Mono" font-weight="700" font-size="16" letter-spacing="2" fill="{YEL}">ADMIT ALL · 3 DAYS</text>
 <text x="82" y="800" font-family="Anton" font-size="76" fill="{PAPER}">30·31 OCT</text>
 <text x="84" y="852" font-family="Anton" font-size="40" letter-spacing="1" fill="{YEL}">&amp; 01 NOV 2026</text>
-<text x="416" y="785" font-family="Space Mono" font-weight="700" font-size="12" letter-spacing="2" fill="{PAPER}" transform="rotate(-90 416 785)" text-anchor="middle">NIT SIKKIM</text></g>
-<g id="sticker" transform="rotate(12 500 680)"><circle cx="500" cy="680" r="50" fill="{PINK}"/>
-<text x="500" y="676" text-anchor="middle" font-family="Anton" font-size="30" fill="{PAPER}">3 DAYS</text>
-<text x="500" y="698" text-anchor="middle" font-family="Space Mono" font-weight="700" font-size="11" letter-spacing="1" fill="{INK}">OF BLOOM</text></g>
+<text x="416" y="785" font-family="Space Mono" font-weight="700" font-size="16" letter-spacing="2" fill="{PAPER}" transform="rotate(-90 416 785)" text-anchor="middle">NIT SIKKIM</text></g>
+<g id="sticker" transform="rotate(12 512 728)"><circle cx="512" cy="728" r="50" fill="{PINK}"/>
+<text x="512" y="724" text-anchor="middle" font-family="Anton" font-size="30" fill="{PAPER}">3 DAYS</text>
+<text x="512" y="746" text-anchor="middle" font-family="Space Mono" font-weight="700" font-size="13" letter-spacing="1" fill="{INK}">OF BLOOM</text></g>
 <g id="activities">{al}</g>
 {blossom(985, 615, 26, PINK, YEL, 20)}{blossom(470, 940, 18, BLUE, PAPER, 5, op=.9)}
 <line x1="58" y1="950" x2="1022" y2="950" stroke="{INK}" stroke-width="2"/>
 {sp}
-{socials(1022, 1004, INK, "end")}
+{socials(1022, 1002, INK, "end", 1.15)}
 {grain(.55)}'''
     return svg(body, ["Anton", "Fraunces", "Shrikhand", "Syne", "Space Mono", "Caveat", "Inter Tight"], "UDGAM 2K26 — Riso Collage", defs)
 
 
 # ======================================================================
-# 02 · ABSTRACT MODERNISM — "Where the mountains meet the music"
+# 02 · ABSTRACT MODERNISM × MIXED MEDIA — "Where the mountains meet the music"
 # ======================================================================
-def p2():
-    CREAM, NAVY, PINK, ORANGE, TEAL, MAG, INK = "#EEE6D4", "#1C1E4A", "#EF5D86", "#F6A23A", "#22A6A8", "#A3238F", "#141432"
-    bars = "".join(f'<rect x="{528 + i * 41}" y="{480 - h}" width="24" height="{h}" fill="{NAVY}"/>'
-                   for i, h in enumerate([40, 70, 100, 55, 115, 80, 45, 95, 60, 105, 50, 75, 35]))
-    grooves = "".join(f'<circle cx="905" cy="155" r="{r}" fill="none" stroke="#3a3a5e" stroke-width="1.2"/>' for r in range(48, 96, 7))
-    U = width("UDGAM", "Syne-800.ttf", 100, -2)
-    fs = 1000 / U * 100
-    y0 = 514 + fs * .78
-    _, spw = sponsors(0, 0, 56)
-    sp, spw = sponsors(round(1040 - spw, 1), y0 + 222, 56)
-    body = f'''<rect width="{S}" height="{S}" fill="{CREAM}"/>
-<g id="block-himalaya"><rect x="40" y="40" width="460" height="460" fill="{NAVY}"/>
-<clipPath id="cA"><rect x="40" y="40" width="460" height="460"/></clipPath><g clip-path="url(#cA)">
-<circle cx="300" cy="330" r="130" fill="{ORANGE}"/>
-<rect x="170" y="300" width="260" height="8" fill="{NAVY}"/><rect x="170" y="322" width="260" height="10" fill="{NAVY}"/><rect x="170" y="346" width="260" height="13" fill="{NAVY}"/>
-<polygon points="40,500 40,330 140,250 210,330 330,180 430,300 500,240 500,500" fill="#3A3F86"/>
-<polygon points="40,500 40,420 120,350 200,430 290,330 380,420 450,360 500,400 500,500" fill="{TEAL}"/>
-<polygon points="330,180 300,226 318,220 334,236 350,218 366,228" fill="{CREAM}"/>
-<polygon points="140,250 120,267 133,265 143,276 155,264" fill="{CREAM}"/>
-<rect x="40" y="440" width="460" height="60" fill="{INK}"/>
-</g>
-<text x="64" y="130" font-family="Syne" font-weight="800" font-size="78" letter-spacing="-2" fill="{CREAM}">2K26</text>
-<text x="66" y="160" font-family="Space Mono" font-weight="700" font-size="12" letter-spacing="2.5" fill="{ORANGE}">SIKKIM · 27°N 88°E</text>
-<text x="66" y="478" font-family="Space Mono" font-weight="700" font-size="12" letter-spacing="2.5" fill="{CREAM}">ANNUAL CULTURAL FEST · NIT SIKKIM</text></g>
-<g id="block-blossom"><rect x="500" y="40" width="270" height="230" fill="{PINK}"/>
-{"".join(f'<circle cx="{635 + 52 * math.sin(math.radians(i * 72)):.1f}" cy="{155 - 52 * math.cos(math.radians(i * 72)):.1f}" r="40" fill="{CREAM}" style="mix-blend-mode:normal"/>' for i in range(5))}
-<circle cx="635" cy="155" r="22" fill="{MAG}"/></g>
-<g id="block-vinyl"><rect x="770" y="40" width="270" height="230" fill="{ORANGE}"/>
-<path d="M770 270 A135 135 0 0 1 1040 270Z" fill="{MAG}"/>
-<circle cx="905" cy="155" r="98" fill="{INK}"/>{grooves}<circle cx="905" cy="155" r="34" fill="{PINK}"/><circle cx="905" cy="155" r="5" fill="{CREAM}"/>
-<line x1="1018" y1="60" x2="958" y2="140" stroke="{CREAM}" stroke-width="6" stroke-linecap="round"/></g>
-<g id="block-live"><rect x="500" y="270" width="540" height="230" fill="{TEAL}"/>
-<g clip-path="url(#cD)">{bars}</g><clipPath id="cD"><rect x="500" y="270" width="540" height="230"/></clipPath>
-<circle cx="990" cy="320" r="22" fill="{PINK}"/>
-<text x="524" y="314" font-family="Syne" font-weight="800" font-size="36" fill="{CREAM}">LIVE.</text>
-<text x="526" y="336" font-family="Space Mono" font-weight="700" font-size="12" letter-spacing="2.5" fill="{NAVY}">CONCERTS · DANCE · ART · GAMES</text></g>
-<text id="headline-UDGAM" x="34" y="{500 + fs * .78:.0f}" font-family="Syne" font-weight="800" font-size="{fs:.1f}" letter-spacing="{-2 * fs / 100:.1f}" fill="{NAVY}">UDGAM</text>
-<line x1="40" y1="{514 + fs * .78:.0f}" x2="1040" y2="{514 + fs * .78:.0f}" stroke="{NAVY}" stroke-width="3"/>
-<g id="info">
-<text x="40" y="{y0 + 66:.0f}" font-family="Fraunces" font-style="italic" font-size="54" fill="{MAG}">Chase the Bloom.</text>
-<text font-family="Inter Tight" font-weight="600" font-size="23" fill="{NAVY}" text-anchor="end"><tspan x="1040" y="{y0 + 36:.0f}">Where the mountains meet the music.</tspan></text>
-<text x="1040" y="{y0 + 64:.0f}" text-anchor="end" font-family="Space Mono" font-size="14" letter-spacing="1.5" fill="{NAVY}" opacity=".8">Three days of bloom, beats &amp; bliss.</text></g>
-<g id="dates"><rect x="40" y="{y0 + 100:.0f}" width="1000" height="84" fill="{NAVY}"/><rect x="40" y="{y0 + 100:.0f}" width="16" height="84" fill="{PINK}"/>
-<text x="80" y="{y0 + 157:.0f}" font-family="Syne" font-weight="800" font-size="40" letter-spacing="-.5" fill="{CREAM}">30—31 OCT <tspan fill="{ORANGE}">&amp;</tspan> 01 NOV 2026</text>
-<text x="1016" y="{y0 + 147:.0f}" text-anchor="end" font-family="Space Mono" font-weight="700" font-size="13" letter-spacing="2.5" fill="{PINK}">NIT SIKKIM</text></g>
-<g id="footer">{img("udgam-logo", 32, y0 + 206, 236)}
-{sp}
-{socials(1040, y0 + 326, NAVY, "end")}
-<text x="{1040 - spw}" y="{y0 + 331:.0f}" font-family="Space Mono" font-weight="700" font-size="11" letter-spacing="2" fill="{NAVY}">FOLLOW THE BLOOM</text></g>
-{grain(.4)}'''
-    return svg(body, ["Syne", "Fraunces", "Inter Tight", "Space Mono"], "UDGAM 2K26 — Abstract Modernism")
+def jag(pts, amp, seed, step=7):
+    """Polyline with torn-paper jitter along every segment."""
+    rnd, out = random.Random(seed), []
+    for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+        L = math.hypot(x1 - x0, y1 - y0)
+        k, nx, ny = max(1, int(L / step)), (y1 - y0) / L, -(x1 - x0) / L
+        for s in range(k):
+            t, j = s / k, rnd.uniform(-amp, amp)
+            out.append(f"{x0 + (x1 - x0) * t + nx * j:.1f},{y0 + (y1 - y0) * t + ny * j:.1f}")
+    return " ".join(out)
 
+
+def brush(x, y, w, h, col, seed=1, gap="#ECE3D0", id=None):
+    """Dry-brush paint stroke: ragged edges, tapered tail, bristle streaks."""
+    rnd, n = random.Random(seed), 60
+    top, bot = [], []
+    for i in range(n + 1):
+        t = i / n
+        hw = h / 2 * min(1, (t / .05) ** .5) * (1 - .8 * max(0, (t - .8) / .2) ** 1.4)
+        cy = y + h / 2 + math.sin(t * math.pi * 1.4) * h * .08
+        top.append(f"{x + w * t:.1f},{cy - hw + rnd.uniform(-1.6, 1.6):.1f}")
+        bot.append(f"{x + w * t:.1f},{cy + hw + rnd.uniform(-1.6, 1.6):.1f}")
+    streaks = "".join(
+        f'<line x1="{x + w * rnd.uniform(.05, .3):.0f}" y1="{y + h * (.2 + .6 * k / 5):.0f}" x2="{x + w * rnd.uniform(.75, .97):.0f}" y2="{y + h * (.2 + .6 * k / 5) + rnd.uniform(-3, 3):.0f}" '
+        f'stroke="{gap}" stroke-width="{rnd.uniform(1, 2.6):.1f}" stroke-dasharray="{rnd.randint(30, 90)} {rnd.randint(4, 18)} {rnd.randint(10, 60)} {rnd.randint(3, 10)}" opacity=".55"/>'
+        for k in range(6))
+    return f'<g{f" id=\"{id}\"" if id else ""}><polygon points="{" ".join(top + bot[::-1])}" fill="{col}"/>{streaks}</g>'
+
+
+def scribble(cx, cy, r, col, seed=1, loops=3, sw=2.2, op=.85):
+    """Hand-drawn pencil loops."""
+    rnd, pts = random.Random(seed), []
+    for i in range(loops * 36):
+        a = i / 36 * 2 * math.pi
+        rr = r * (1 + rnd.uniform(-.018, .018) + .05 * math.sin(i / 9 + loops))
+        pts.append(f"{cx + rr * math.cos(a) * 1.04:.1f},{cy + rr * math.sin(a):.1f}")
+    return f'<polyline points="{" ".join(pts)}" fill="none" stroke="{col}" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round" opacity="{op}"/>'
+
+
+def cutout(cx, cy, r, fill, seed=1, rot=0, stroke=None, sw=3):
+    """Matisse-style paper cut-out blossom (each petal a little different)."""
+    rnd = random.Random(seed)
+    st = f' fill="none" stroke="{stroke}" stroke-width="{sw}" stroke-linejoin="round"' if stroke else f' fill="{fill}"'
+    return (f'<g transform="translate({cx},{cy}) rotate({rot})"{st}>' +
+            "".join(f'<path d="{petal_d(r * rnd.uniform(.86, 1.08))}" transform="rotate({i * 72 + rnd.uniform(-8, 8):.1f})"/>' for i in range(5)) + "</g>")
+
+
+def p2():
+    PAPER, NAVY, PINK, ORANGE, TEAL, MAG, CREAM, INK = "#ECE3D0", "#1C1E4A", "#FF5C8A", "#F6A23A", "#22A6A8", "#B0177F", "#FFF4E2", "#141432"
+    arch = "M70 790 V320 A250 250 0 0 1 570 320 V790 Z"
+    defs = f'''<linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC07A"/><stop offset=".42" stop-color="#F7839A"/><stop offset=".75" stop-color="#9C4AA8"/><stop offset="1" stop-color="#3C2C79"/></linearGradient>
+<clipPath id="arch-clip"><path d="{arch}"/></clipPath><clipPath id="sleeve-clip"><rect x="640" y="262" width="250" height="250"/></clipPath>
+<path id="sticker-ring" d="M0 0 m-47 0 a47 47 0 1 1 94 0 a47 47 0 1 1 -94 0"/>'''
+    mtn = lambda pts, col, seed, amp=3.2: f'<polygon points="{jag(pts + [pts[0]], amp, seed)}" fill="{col}"/>'
+    flags = ""
+    for i in range(10):  # Sikkimese prayer flags (lungta colours) strung across the valley
+        t = i / 9
+        fx, fy = 100 + 430 * t, 560 - 95 * t + 22 * math.sin(math.pi * t)
+        flags += f'<rect x="{fx:.0f}" y="{fy:.0f}" width="24" height="30" fill="{["#2F5BD3", CREAM, "#E2364B", "#1E9E5A", "#FFD23F"][i % 5]}" transform="rotate({-8 + 4 * math.sin(i)} {fx:.0f} {fy:.0f})"/>'
+    rnd = random.Random(7)
+    arch_petals = "".join(petal(rnd.uniform(90, 550), rnd.uniform(140, 640), rnd.uniform(7, 13), rnd.uniform(0, 360), rnd.choice((CREAM, "#FFD1E3", PINK)), .95) for _ in range(14))
+    grooves = "".join(f'<circle cx="905" cy="387" r="{r}" fill="none" stroke="#3a3a5e" stroke-width="1.3"/>' for r in range(46, 112, 7))
+    U = width("UDGAM", "Syne-800.ttf", 100, -2)
+    fs = 960 / U * 100
+    sp, spw = sponsors(60, 982, 62)
+    body = f'''<rect width="{S}" height="{S}" fill="{PAPER}"/>
+<text id="side-label" x="46" y="790" transform="rotate(-90 46 790)" font-family="Space Mono" font-weight="700" font-size="17" letter-spacing="3.5" fill="{NAVY}">NIT SIKKIM · ANNUAL CULTURAL FEST</text>
+<path id="arch-shadow" d="{arch}" fill="none" stroke="{NAVY}" stroke-width="3" transform="translate(14,14)"/>
+<g id="arch-window" clip-path="url(#arch-clip)">
+<rect x="60" y="60" width="520" height="740" fill="url(#dusk)"/>
+<circle cx="320" cy="392" r="132" fill="#FFE6A8"/>
+{halftone(320, 392, 230, 9, 4.2, "#FF6F61", 20, 1.4, id="sun-halftone")}
+{scribble(320, 392, 150, NAVY, 3, 2, 2)}
+{mtn([(60, 620), (140, 500), (205, 550), (300, 432), (385, 520), (455, 472), (580, 560), (580, 800), (60, 800)], "#6E4AA6", 1)}
+{mtn([(60, 690), (170, 565), (250, 622), (360, 500), (470, 612), (580, 580), (580, 800), (60, 800)], NAVY, 2)}
+{mtn([(360, 500), (328, 538), (346, 533), (358, 548), (373, 531), (394, 540)], CREAM, 3, 1.6)}
+{mtn([(170, 565), (150, 590), (163, 587), (172, 598), (184, 586), (195, 592)], CREAM, 4, 1.4)}
+<path d="M100 560 Q330 {520} 540 465" fill="none" stroke="{CREAM}" stroke-width="1.5" opacity=".8"/><g id="prayer-flags">{flags}</g>
+{mtn([(60, 742), (160, 692), (262, 732), (382, 668), (500, 722), (580, 700), (580, 800), (60, 800)], TEAL, 5)}
+{halftone(200, 790, 180, 8, 3.2, NAVY, 45, 1.2, id="ground-halftone")}
+<g id="arch-petals">{arch_petals}</g>
+</g>
+<path d="{arch}" fill="none" stroke="{NAVY}" stroke-width="3"/>
+<g id="cutout-blossom">{cutout(572, 236, 150, MAG, 9, 14)}{cutout(584, 226, 150, None, 9, 14, stroke=PINK, sw=3)}
+{halftone(572, 236, 62, 7, 3.3, "#FFD23F", 10, 1, id="blossom-core", blend="normal")}<circle cx="572" cy="236" r="12" fill="{NAVY}"/></g>
+{img("udgam-logo", 790, 46, 244)}
+<g id="record">
+<circle cx="905" cy="387" r="118" fill="{INK}"/>{grooves}<circle cx="905" cy="387" r="38" fill="{ORANGE}"/><circle cx="905" cy="387" r="5" fill="{PAPER}"/></g>
+<g id="sleeve"><rect x="640" y="262" width="250" height="250" fill="{NAVY}"/>
+<g clip-path="url(#sleeve-clip)">{halftone(890, 262, 260, 10, 4.6, PINK, 30, 1.1, blend="normal")}</g>
+<text x="658" y="352" font-family="Syne" font-weight="800" font-size="54" letter-spacing="-1.5" fill="{CREAM}">2K26</text>
+<text x="662" y="488" font-family="Space Mono" font-weight="700" font-size="17" letter-spacing="2" fill="{CREAM}">SIDE A — LIVE</text>
+<rect x="654" y="368" width="228" height="28" fill="{NAVY}"/><text x="662" y="388" font-family="Space Mono" font-weight="700" font-size="17" letter-spacing="2" fill="{ORANGE}">3 DAYS · 3 NIGHTS</text></g>
+{tape(828, 248, 96, 38)}
+<g id="dates" transform="rotate(-2 830 610)">{torn(620, 552, 420, 118, NAVY, 0, seed=31, amp=3)}
+<text x="1018" y="604" text-anchor="end" font-family="Syne" font-weight="800" font-size="44" letter-spacing="-1" fill="{CREAM}">30—31 OCT</text>
+<text x="1018" y="650" text-anchor="end" font-family="Syne" font-weight="800" font-size="34" letter-spacing="-.5" fill="{ORANGE}">&amp; 01 NOV 2026</text></g>
+<g id="live-sticker" transform="translate(546,640) rotate(-12)"><circle r="66" fill="{ORANGE}"/><circle r="59" fill="none" stroke="{NAVY}" stroke-width="1.5" stroke-dasharray="3 5"/>
+<text font-family="Space Mono" font-weight="700" font-size="14" letter-spacing="2.6" fill="{NAVY}"><textPath href="#sticker-ring">LIVE MUSIC ✦ DANCE ✦ ART ✦ </textPath></text>
+<text y="12" text-anchor="middle" font-family="Anton" font-size="34" fill="{NAVY}">LIVE</text></g>
+{brush(600, 686, 440, 84, PINK, 4, gap=PAPER, id="brush-stroke")}
+<text id="tagline" x="626" y="742" font-family="Fraunces" font-style="italic" font-size="50" fill="{CREAM}">Chase the Bloom.</text>
+<text id="hook" x="1036" y="808" text-anchor="end" font-family="Inter Tight" font-weight="600" font-size="25" fill="{NAVY}">Where the mountains meet the music.</text>
+<g id="headline-UDGAM" font-family="Syne" font-weight="800" font-size="{fs:.1f}" letter-spacing="{-2 * fs / 100:.1f}">
+<text x="68" y="958" fill="{PINK}" style="mix-blend-mode:multiply">UDGAM</text><text x="60" y="952" fill="{NAVY}" style="mix-blend-mode:multiply">UDGAM</text></g>
+{sp}
+{socials(1036, 1013, NAVY, "end", 1.15)}
+{grain(.5)}'''
+    return svg(body, ["Syne", "Fraunces", "Inter Tight", "Space Mono", "Anton"], "UDGAM 2K26 — Abstract Mixed Media", defs)
 
 # ======================================================================
 # 03 · MINIMALISM — "The bloom returns."
@@ -274,7 +331,7 @@ def p3():
     BG, INK, PINK, DPINK, BARK = "#F6F0E8", "#2B2230", "#F49AB8", "#E2557F", "#3B2A2C"
     flowers = [(700, 268, 44, PINK, -10), (868, 196, 36, DPINK, 18), (566, 338, 30, PINK, 40), (985, 168, 26, PINK, 5), (790, 300, 22, DPINK, 30)]
     buds = [(620, 300), (930, 150), (745, 225), (1040, 190)]
-    sp, spw = sponsors(60, 990, 52, "none", "#8a7f86", stroke="#d8cdc6")
+    sp, spw = sponsors(60, 984, 62, "none", "#8a7f86", stroke="#d8cdc6")
     body = f'''<rect width="{S}" height="{S}" fill="{BG}"/>
 <g id="branch" fill="none" stroke="{BARK}" stroke-linecap="round">
 <path d="M1090 96 C980 140 900 160 820 220 C740 280 640 300 520 360" stroke-width="5"/>
@@ -283,19 +340,19 @@ def p3():
 <g id="buds">{"".join(f'<ellipse cx="{x}" cy="{y}" rx="7" ry="9" fill="{DPINK}"/>' for x, y in buds)}</g>
 <g id="blossoms">{"".join(blossom(x, y, r, c, BARK, rot) for x, y, r, c, rot in flowers)}</g>
 <g id="falling-petals">{petal(560, 470, 16, 40, PINK)}{petal(460, 560, 12, 120, DPINK, .8)}{petal(900, 520, 14, -30, PINK, .9)}</g>
-{img("udgam-logo", 56, 52, 210)}
+{img("udgam-logo", 52, 46, 240)}
 <g id="headline">
-<text x="60" y="590" font-family="Space Mono" font-weight="400" font-size="14" letter-spacing="3.2" fill="{INK}">NIT SIKKIM · THE ANNUAL CULTURAL FEST</text>
+<text x="60" y="586" font-family="Space Mono" font-weight="700" font-size="18" letter-spacing="2.6" fill="{INK}">NIT SIKKIM · THE ANNUAL CULTURAL FEST</text>
 <text x="54" y="730" font-family="Instrument Serif" font-size="164" letter-spacing="-3" fill="{INK}">The bloom</text>
 <text x="54" y="866" font-family="Instrument Serif" font-style="italic" font-size="164" letter-spacing="-3" fill="{DPINK}">returns.</text></g>
 <g id="details" text-anchor="end" fill="{INK}">
-<text x="1020" y="802" font-family="Inter Tight" font-weight="800" font-size="24" letter-spacing="1">UDGAM 2K26</text>
-<text x="1020" y="834" font-family="Inter Tight" font-weight="400" font-size="24">30 · 31 Oct &amp; 01 Nov 2026</text>
-<text x="1020" y="866" font-family="Instrument Serif" font-style="italic" font-size="26" fill="{DPINK}">Chase the Bloom</text></g>
-<text x="60" y="938" font-family="Inter Tight" font-weight="400" font-size="19" fill="{INK}" opacity=".7">Three days of music, dance, art &amp; everything in between.</text>
+<text x="1020" y="790" font-family="Inter Tight" font-weight="800" font-size="30" letter-spacing="1">UDGAM 2K26</text>
+<text x="1020" y="828" font-family="Inter Tight" font-weight="600" font-size="27">30 · 31 Oct &amp; 01 Nov 2026</text>
+<text x="1020" y="866" font-family="Instrument Serif" font-style="italic" font-size="34" fill="{DPINK}">Chase the Bloom</text></g>
+<text x="60" y="938" font-family="Inter Tight" font-weight="400" font-size="24" fill="{INK}" opacity=".85">Three days of music, dance, art &amp; everything in between.</text>
 <line x1="60" y1="964" x2="1020" y2="964" stroke="{INK}" stroke-opacity=".25"/>
 {sp}
-{socials(1020, 1016, INK, "end", .9)}
+{socials(1020, 1015, INK, "end", 1.15)}
 {grain(.3)}'''
     return svg(body, ["Instrument Serif", "Inter Tight", "Space Mono"], "UDGAM 2K26 — Minimal")
 
@@ -328,30 +385,42 @@ def p4():
 <linearGradient id="beam" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FFD9EC" stop-opacity=".32"/><stop offset="1" stop-color="#FFD9EC" stop-opacity="0"/></linearGradient>
 <radialGradient id="stage-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FF7FB5" stop-opacity=".75"/><stop offset="1" stop-color="#FF7FB5" stop-opacity="0"/></radialGradient>
 <filter id="glow" x="-1" y="-1" width="3" height="3"><feGaussianBlur stdDeviation="5"/></filter>
-<filter id="soft" x="-.2" y="-.2" width="1.4" height="1.4"><feGaussianBlur stdDeviation="18"/></filter>'''
-    sp, spw = sponsors(60, 1004, 50)
+<filter id="soft" x="-.2" y="-.2" width="1.4" height="1.4"><feGaussianBlur stdDeviation="18"/></filter>
+<filter id="neon" x="-.3" y="-.6" width="1.6" height="2.2"><feGaussianBlur stdDeviation="14"/></filter>
+<filter id="neon-thin" x="-.3" y="-1" width="1.6" height="3"><feGaussianBlur stdDeviation="5"/></filter>
+<radialGradient id="spot" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE3F0" stop-opacity=".35"/><stop offset=".6" stop-color="#FF8FC0" stop-opacity=".12"/><stop offset="1" stop-color="#FF8FC0" stop-opacity="0"/></radialGradient>'''
+    sp, spw = sponsors(56, 996, 60)
     body = f'''<rect width="{S}" height="{S}" fill="url(#sky)"/>
 <g id="stars">{stars}</g>
-<g id="sun-disc"><circle cx="540" cy="590" r="250" fill="url(#sun)" opacity=".35" filter="url(#soft)"/><circle cx="540" cy="590" r="230" fill="url(#sun)"/>
-{"".join(f'<rect x="300" y="{620 + i * 26 + i * i * 1.5:.0f}" width="480" height="{4 + i * 2.6:.0f}" fill="#4A1259"/>' for i in range(6))}</g>
+<g id="sun-disc"><circle cx="540" cy="650" r="250" fill="url(#sun)" opacity=".35" filter="url(#soft)"/><circle cx="540" cy="650" r="230" fill="url(#sun)"/>
+{"".join(f'<rect x="300" y="{660 + i * 22 + i * i * 1.5:.0f}" width="480" height="{4 + i * 2.6:.0f}" fill="#4A1259"/>' for i in range(6))}</g>
 <g id="himalaya"><polygon points="0,760 120,650 190,700 330,560 420,640 470,610 560,690 690,540 790,650 880,600 1080,720 1080,860 0,860" fill="#2A0D44"/>
 <polygon points="330,560 305,585 322,582 333,595 347,580 360,588" fill="#E8D6F0" opacity=".8"/><polygon points="690,540 664,568 681,563 693,577 708,562 722,570" fill="#E8D6F0" opacity=".8"/>
 <polygon points="0,820 160,740 300,800 450,730 600,800 760,720 900,790 1080,740 1080,880 0,880" fill="#1A0830"/></g>
 <ellipse cx="540" cy="860" rx="520" ry="120" fill="url(#stage-glow)"/>
 <g id="light-beams">{beams}</g>
 <g id="petals">{petals}</g>
-<g id="top">{img("udgam-logo", 54, 44, 170)}
-<g font-family="Space Mono" font-weight="700" font-size="13" letter-spacing="2.4" fill="{CREAM}" text-anchor="end"><text x="1026" y="70">NIT SIKKIM</text><text x="1026" y="92" opacity=".75">THE ANNUAL CULTURAL FEST</text></g></g>
+<ellipse id="title-spotlight" cx="540" cy="330" rx="520" ry="230" fill="url(#spot)" style="mix-blend-mode:screen"/>
+<g id="top">{img("udgam-logo", 48, 38, 205)}
+<g font-family="Space Mono" font-weight="700" font-size="17" letter-spacing="2.6" fill="{CREAM}" text-anchor="end"><text x="1030" y="74">NIT SIKKIM</text><text x="1030" y="100" fill="{LPINK}">ANNUAL CULTURAL FEST</text></g></g>
 <g id="headline" text-anchor="middle">
-<text x="540" y="232" font-family="Space Mono" font-weight="700" font-size="18" letter-spacing="9" fill="{LPINK}">LOUDER THAN SPRING</text>
-<text x="540" y="430" font-family="Fraunces" font-weight="900" font-size="228" letter-spacing="-6" fill="{CREAM}">UDGAM</text>
-<text x="540" y="510" font-family="Fraunces" font-style="italic" font-size="60" fill="{PINK}">2K26 — chase the bloom</text></g>
+<g id="neon-tag"><rect x="335" y="178" width="410" height="50" rx="25" fill="none" stroke="{PINK}" stroke-width="5" filter="url(#neon-thin)"/>
+<rect x="335" y="178" width="410" height="50" rx="25" fill="#1A0830" fill-opacity=".55" stroke="{LPINK}" stroke-width="2.5"/>
+<text x="540" y="211" font-family="Space Mono" font-weight="700" font-size="21" letter-spacing="6" fill="{CREAM}">LOUDER THAN SPRING</text></g>
+<g id="title" font-family="Fraunces" font-weight="900" font-size="236" letter-spacing="-6">
+<text x="540" y="430" fill="{PINK}" filter="url(#neon)" opacity=".95">UDGAM</text>
+<text x="547" y="437" fill="#FF3D8B">UDGAM</text>
+<text x="540" y="430" fill="{CREAM}">UDGAM</text></g>
+<g id="tagline-pill"><rect x="290" y="462" width="500" height="68" rx="34" fill="#FF4F9A"/><rect x="296" y="468" width="488" height="56" rx="28" fill="none" stroke="#1A0830" stroke-width="1.5" stroke-dasharray="2 6" opacity=".6"/>
+<text x="540" y="508" fill="#1A0830"><tspan font-family="Space Mono" font-weight="700" font-size="27" letter-spacing="1">2K26 · </tspan><tspan font-family="Fraunces" font-style="italic" font-size="40">chase the bloom</tspan></text></g></g>
 <g id="details" text-anchor="middle">
-<text x="540" y="790" font-family="Space Mono" font-weight="700" font-size="28" letter-spacing="3" fill="{CREAM}">{DATES}</text>
-<text x="540" y="826" font-family="Inter Tight" font-weight="600" font-size="16" letter-spacing="4.5" fill="{LPINK}">LIVE CONCERTS · DJ NIGHTS · DANCE · FUN ZONES · FOOD</text></g>
+<rect x="134" y="732" width="812" height="118" rx="22" fill="none" stroke="{PINK}" stroke-width="6" filter="url(#neon-thin)"/>
+<rect x="134" y="732" width="812" height="118" rx="22" fill="#12061F" fill-opacity=".78" stroke="{LPINK}" stroke-width="2"/>
+<text x="540" y="790" font-family="Space Mono" font-weight="700" font-size="34" letter-spacing="2" fill="{CREAM}">{DATES}</text>
+<text x="540" y="828" font-family="Inter Tight" font-weight="800" font-size="20" letter-spacing="3.5" fill="{LPINK}">LIVE CONCERTS · DJ NIGHTS · DANCE · FUN ZONES · FOOD</text></g>
 <g id="crowd" fill="{SIL}">{crowd}</g>
 {sp}
-{socials(1020, 1029, CREAM, "end")}
+{socials(1026, 1026, CREAM, "end", 1.15)}
 {grain(.45)}'''
     return svg(body, ["Fraunces", "Space Mono", "Inter Tight"], "UDGAM 2K26 — Night Concert", defs)
 
@@ -379,7 +448,7 @@ def p5():
                    f'<path d="M-20 14 H20 V30 a10 10 0 0 1 -10 10 H-10 a10 10 0 0 1 -10 -10Z" fill="{[PINK, TEAL, MAG, ORANGE][i % 4]}" stroke="{NAVY}" stroke-width="3"/></g>' for i, a in enumerate(range(15, 375, 30)))
     star = lambda x, y, r, n=24, k=.82: " ".join(f"{x + (r if i % 2 == 0 else r * k) * math.cos(math.pi * i / n):.1f},{y + (r if i % 2 == 0 else r * k) * math.sin(math.pi * i / n):.1f}" for i in range(2 * n))
     defs = '<clipPath id="corner"><rect width="1080" height="960"/></clipPath>'
-    sp, spw = sponsors(60, 990, 54, CREAM)
+    sp, spw = sponsors(56, 988, 62, CREAM)
     body = f'''<rect width="{S}" height="{S}" fill="{Y1}"/>
 <g id="sunburst" fill="{Y2}">{rays}</g>
 <g clip-path="url(#corner)">{halftone(1080, 0, 420, 12, 5, ORANGE, 30, 1.2, id="halftone-corner")}{halftone(0, 960, 380, 12, 5, PINK, 30, 1.2, id="halftone-corner-2")}</g>
@@ -390,7 +459,7 @@ def p5():
 {spokes}{cars}{blossom(wx, wy, 50, PINK, NAVY, 0, stroke=NAVY, sw=3)}</g>
 <g id="logo-sticker" transform="rotate(5 905 245)"><rect x="782" y="160" width="248" height="170" rx="22" fill="{CREAM}" stroke="{NAVY}" stroke-width="3"/>{img("udgam-logo", 796, 172, 220)}</g>
 <g id="headline">
-<text x="62" y="236" font-family="Space Mono" font-weight="700" font-size="17" letter-spacing="4" fill="{NAVY}">COME ONE, COME ALL!</text>
+<text x="62" y="236" font-family="Space Mono" font-weight="700" font-size="20" letter-spacing="4" fill="{NAVY}">COME ONE, COME ALL!</text>
 <text x="66" y="396" font-family="Shrikhand" font-size="172" fill="{NAVY}">Udgam</text>
 <text x="58" y="388" font-family="Shrikhand" font-size="172" fill="{MAG}" stroke="{CREAM}" stroke-width="3" paint-order="stroke">Udgam</text>
 <g transform="rotate(14 650 236)"><polygon points="{star(650, 236, 66)}" fill="{PINK}" stroke="{NAVY}" stroke-width="3"/>
@@ -402,15 +471,15 @@ def p5():
 <g id="ticket" transform="rotate(-2 270 720)">
 <path d="M60 630 H480 V700 a16 16 0 0 0 0 32 V810 H60 V732 a16 16 0 0 0 0 -32Z" fill="{CREAM}" stroke="{NAVY}" stroke-width="3"/>
 <rect x="76" y="646" width="388" height="148" fill="none" stroke="{MAG}" stroke-width="1.5" stroke-dasharray="5 5"/>
-<text x="94" y="676" font-family="Space Mono" font-weight="700" font-size="13" letter-spacing="3" fill="{MAG}">★ ADMIT ONE · ALL 3 DAYS ★</text>
+<text x="94" y="676" font-family="Space Mono" font-weight="700" font-size="16" letter-spacing="2" fill="{MAG}">★ ADMIT ONE · ALL 3 DAYS ★</text>
 <text x="92" y="740" font-family="Anton" font-size="62" fill="{NAVY}">30 · 31 OCT</text>
 <text x="94" y="780" font-family="Anton" font-size="30" letter-spacing="1" fill="{MAG}">&amp; 01 NOV 2026 · NIT SIKKIM</text></g>
-<text x="62" y="870" font-family="Space Mono" font-weight="700" font-size="14" letter-spacing="2" fill="{NAVY}">CONCERTS · RIDES · DANCE · GAMES · FOOD</text>
-<text x="62" y="898" font-family="Space Mono" font-size="13" letter-spacing="1.5" fill="{NAVY}">The annual cultural fest of NIT Sikkim</text>
-{blossom(520, 560, 22, PINK, NAVY, 10)}{blossom(1010, 430, 18, CREAM, MAG, 30)}{petal(560, 860, 12, 50, MAG)}{petal(990, 860, 10, -20, PINK)}
+<text x="62" y="872" font-family="Space Mono" font-weight="700" font-size="19" letter-spacing="1" fill="{NAVY}">CONCERTS · RIDES · DANCE · GAMES · FOOD</text>
+<text x="62" y="906" font-family="Inter Tight" font-weight="600" font-size="21" fill="{NAVY}">The annual cultural fest of NIT Sikkim</text>
+{blossom(520, 560, 22, PINK, NAVY, 10)}{blossom(1010, 430, 18, CREAM, MAG, 30)}{petal(600, 590, 12, 50, MAG)}{petal(990, 860, 10, -20, PINK)}
 <rect id="ground" y="960" width="{S}" height="120" fill="{NAVY}"/>
 {sp}
-{socials(1020, 1017, CREAM, "end")}
+{socials(1026, 1019, CREAM, "end", 1.15)}
 {grain(.5)}'''
     return svg(body, ["Shrikhand", "Anton", "Fraunces", "Space Mono", "Inter Tight"], "UDGAM 2K26 — Retro Carnival", defs)
 
