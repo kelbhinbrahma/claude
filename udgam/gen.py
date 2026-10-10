@@ -305,7 +305,6 @@ def p2():
 <g id="sleeve"><rect x="640" y="262" width="250" height="250" fill="{NAVY}"/>
 <g clip-path="url(#sleeve-clip)">{halftone(890, 262, 260, 10, 4.6, PINK, 30, 1.1, blend="normal")}</g>
 <text x="658" y="352" font-family="Syne" font-weight="800" font-size="54" letter-spacing="-1.5" fill="{CREAM}">2K26</text>
-<text x="662" y="488" font-family="Space Mono" font-weight="700" font-size="17" letter-spacing="2" fill="{CREAM}">SIDE A — LIVE</text>
 <rect x="654" y="368" width="228" height="28" fill="{NAVY}"/><text x="662" y="388" font-family="Space Mono" font-weight="700" font-size="17" letter-spacing="2" fill="{ORANGE}">3 DAYS · 3 NIGHTS</text></g>
 {tape(828, 248, 96, 38)}
 <g id="dates" transform="rotate(-2 830 610)">{torn(620, 552, 420, 118, NAVY, 0, seed=31, amp=3)}
@@ -343,9 +342,7 @@ def p3():
 <path d="{ridge_d}" fill="none" stroke="{INK}" stroke-width="1.6" stroke-linejoin="round" opacity=".55"/>
 <path d="M684 432 L700 412 L716 434 M306 466 L320 450 L336 470 M848 450 L860 436 L873 452" fill="none" stroke="{INK}" stroke-width="1.6" stroke-linejoin="round" opacity=".55"/>
 <path d="M120 540 C300 528 500 548 700 532 S940 540 1020 534" fill="none" stroke="{INK}" stroke-width="1" stroke-dasharray="1 6" stroke-linecap="round" opacity=".5"/></g>
-<text x="1022" y="552" text-anchor="end" font-family="Space Mono" font-weight="700" font-size="14" letter-spacing="2" fill="{INK}" opacity=".55">SIKKIM · 27°N 88°E</text>
 <g id="lineup"><line x1="60" y1="226" x2="320" y2="226" stroke="{INK}" stroke-opacity=".3"/>{lineup}</g>
-<text id="date-rail" x="1046" y="620" transform="rotate(90 1046 620)" font-family="Space Mono" font-weight="700" font-size="15" letter-spacing="3" fill="{DPINK}">30.10 — 01.11.2026</text>
 <g id="branch" fill="none" stroke="{BARK}" stroke-linecap="round">
 <path d="M1090 96 C980 140 900 160 820 220 C740 280 640 300 520 360" stroke-width="5"/>
 <path d="M880 176 C900 150 925 140 945 132" stroke-width="3"/><path d="M760 250 C745 230 740 215 742 200" stroke-width="2.5"/>
