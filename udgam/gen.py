@@ -168,7 +168,7 @@ def p1():
         tiles += f'''<g id="letter-{ch}" transform="rotate({rot} {cx} {cy})">{t}
 <text x="{cx}" y="{base:.0f}" text-anchor="middle" font-family="{fam}" font-weight="{wt}" font-size="{fs}" fill="{col}"{"" if col == PAPER else ' style="mix-blend-mode:multiply"'}>{ch}</text></g>'''
     acts = [("LIVE CONCERTS", INK, PAPER, -2), ("DJ NIGHTS", PINK, INK, 2), ("DANCE-OFFS", YEL, INK, -1),
-            ("GAMES &amp; FUN ZONES", BLUE, PAPER, 1.5), ("FOOD STALLS", PAPER, INK, -2.5)]
+            ("GAMES", BLUE, PAPER, 1.5), ("FOOD STALLS", PAPER, INK, -2.5)]
     al = ""
     for i, (t, bg, fg, rot) in enumerate(acts):
         w = width(t.replace("&amp;", "&"), "Anton-400.ttf", 34, 1) + 28
@@ -331,7 +331,7 @@ def p3():
     flowers = [(700, 268, 44, PINK, -10), (868, 196, 36, DPINK, 18), (566, 338, 30, PINK, 40), (985, 168, 26, PINK, 5), (790, 300, 22, DPINK, 30)]
     buds = [(620, 300), (930, 150), (745, 225), (1040, 190)]
     sp, spw = sponsors(60, 984, 62, "none", "#8a7f86", stroke="#d8cdc6")
-    acts = ["Live concerts", "DJ nights", "Dance-offs", "Games &amp; fun zones", "Food stalls"]
+    acts = ["Live concerts", "DJ nights", "Dance-offs", "Games", "Food stalls"]
     lineup = "".join(f'<text x="60" y="{262 + i * 34}"><tspan font-family="Space Mono" font-weight="700" font-size="16" fill="{DPINK}">0{i + 1}</tspan><tspan dx="14" font-family="Inter Tight" font-weight="600" font-size="22" fill="{INK}">{a}</tspan></text>' for i, a in enumerate(acts))
     ridge = [(60, 540), (150, 492), (215, 518), (320, 450), (410, 505), (490, 470), (590, 528), (700, 412), (785, 474), (860, 436), (960, 506), (1020, 488)]
     ridge_d = "M" + " L".join(f"{x} {y}" for x, y in ridge)
@@ -428,7 +428,7 @@ def p4():
 <rect x="134" y="732" width="812" height="118" rx="22" fill="none" stroke="{PINK}" stroke-width="6" filter="url(#neon-thin)"/>
 <rect x="134" y="732" width="812" height="118" rx="22" fill="#12061F" fill-opacity=".78" stroke="{LPINK}" stroke-width="2"/>
 <text x="540" y="790" font-family="Space Mono" font-weight="700" font-size="34" letter-spacing="2" fill="{CREAM}">{DATES}</text>
-<text x="540" y="828" font-family="Inter Tight" font-weight="800" font-size="20" letter-spacing="3.5" fill="{LPINK}">LIVE CONCERTS · DJ NIGHTS · DANCE · FUN ZONES · FOOD</text></g>
+<text x="540" y="828" font-family="Inter Tight" font-weight="800" font-size="20" letter-spacing="3.5" fill="{LPINK}">LIVE CONCERTS · DJ NIGHTS · DANCE · GAMES · FOOD</text></g>
 <g id="crowd" fill="{SIL}">{crowd}</g>
 {sp}
 {socials(1026, 1026, CREAM, "end", 1.15)}
@@ -485,7 +485,7 @@ def p5():
 <text x="94" y="676" font-family="Space Mono" font-weight="700" font-size="16" letter-spacing="2" fill="{MAG}">★ ADMIT ONE · ALL 3 DAYS ★</text>
 <text x="92" y="740" font-family="Anton" font-size="62" fill="{NAVY}">30 · 31 OCT</text>
 <text x="94" y="780" font-family="Anton" font-size="30" letter-spacing="1" fill="{MAG}">&amp; 01 NOV 2026 · NIT SIKKIM</text></g>
-<text x="62" y="872" font-family="Space Mono" font-weight="700" font-size="19" letter-spacing="1" fill="{NAVY}">CONCERTS · RIDES · DANCE · GAMES · FOOD</text>
+<text x="62" y="872" font-family="Space Mono" font-weight="700" font-size="19" letter-spacing="1" fill="{NAVY}">CONCERTS · DANCE · GAMES · FOOD</text>
 <text x="62" y="906" font-family="Inter Tight" font-weight="600" font-size="21" fill="{NAVY}">The annual cultural fest of NIT Sikkim</text>
 {blossom(520, 560, 22, PINK, NAVY, 10)}{blossom(1010, 430, 18, CREAM, MAG, 30)}{petal(600, 590, 12, 50, MAG)}{petal(990, 860, 10, -20, PINK)}
 <rect id="ground" y="960" width="{S}" height="120" fill="{NAVY}"/>
