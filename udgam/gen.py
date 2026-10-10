@@ -332,15 +332,29 @@ def p3():
     flowers = [(700, 268, 44, PINK, -10), (868, 196, 36, DPINK, 18), (566, 338, 30, PINK, 40), (985, 168, 26, PINK, 5), (790, 300, 22, DPINK, 30)]
     buds = [(620, 300), (930, 150), (745, 225), (1040, 190)]
     sp, spw = sponsors(60, 984, 62, "none", "#8a7f86", stroke="#d8cdc6")
+    acts = ["Live concerts", "DJ nights", "Dance-offs", "Games &amp; fun zones", "Food stalls"]
+    lineup = "".join(f'<text x="60" y="{262 + i * 34}"><tspan font-family="Space Mono" font-weight="700" font-size="16" fill="{DPINK}">0{i + 1}</tspan><tspan dx="14" font-family="Inter Tight" font-weight="600" font-size="22" fill="{INK}">{a}</tspan></text>' for i, a in enumerate(acts))
+    ridge = [(60, 540), (150, 492), (215, 518), (320, 450), (410, 505), (490, 470), (590, 528), (700, 412), (785, 474), (860, 436), (960, 506), (1020, 488)]
+    ridge_d = "M" + " L".join(f"{x} {y}" for x, y in ridge)
     body = f'''<rect width="{S}" height="{S}" fill="{BG}"/>
+<circle id="sun" cx="800" cy="330" r="205" fill="#F8D9E2"/>
+<circle cx="800" cy="330" r="232" fill="none" stroke="{DPINK}" stroke-opacity=".35" stroke-dasharray="2 9" stroke-linecap="round" stroke-width="2"/>
+<g id="himalaya-line"><path d="{ridge_d} L1020 560 L60 560Z" fill="{BG}"/>
+<path d="{ridge_d}" fill="none" stroke="{INK}" stroke-width="1.6" stroke-linejoin="round" opacity=".55"/>
+<path d="M684 432 L700 412 L716 434 M306 466 L320 450 L336 470 M848 450 L860 436 L873 452" fill="none" stroke="{INK}" stroke-width="1.6" stroke-linejoin="round" opacity=".55"/>
+<path d="M120 540 C300 528 500 548 700 532 S940 540 1020 534" fill="none" stroke="{INK}" stroke-width="1" stroke-dasharray="1 6" stroke-linecap="round" opacity=".5"/></g>
+<text x="1022" y="552" text-anchor="end" font-family="Space Mono" font-weight="700" font-size="14" letter-spacing="2" fill="{INK}" opacity=".55">SIKKIM · 27°N 88°E</text>
+<g id="lineup"><line x1="60" y1="226" x2="320" y2="226" stroke="{INK}" stroke-opacity=".3"/>{lineup}</g>
+<text id="date-rail" x="1046" y="620" transform="rotate(90 1046 620)" font-family="Space Mono" font-weight="700" font-size="15" letter-spacing="3" fill="{DPINK}">30.10 — 01.11.2026</text>
 <g id="branch" fill="none" stroke="{BARK}" stroke-linecap="round">
 <path d="M1090 96 C980 140 900 160 820 220 C740 280 640 300 520 360" stroke-width="5"/>
 <path d="M880 176 C900 150 925 140 945 132" stroke-width="3"/><path d="M760 250 C745 230 740 215 742 200" stroke-width="2.5"/>
 <path d="M640 310 C625 300 615 290 612 280" stroke-width="2"/><path d="M1000 130 C1015 150 1030 170 1050 180" stroke-width="2.5"/></g>
 <g id="buds">{"".join(f'<ellipse cx="{x}" cy="{y}" rx="7" ry="9" fill="{DPINK}"/>' for x, y in buds)}</g>
 <g id="blossoms">{"".join(blossom(x, y, r, c, BARK, rot) for x, y, r, c, rot in flowers)}</g>
-<g id="falling-petals">{petal(560, 470, 16, 40, PINK)}{petal(460, 560, 12, 120, DPINK, .8)}{petal(900, 520, 14, -30, PINK, .9)}</g>
-{img("udgam-logo", 52, 46, 240)}
+<path id="petal-drift" d="M560 380 C520 430 600 460 540 500 S470 560 440 600" fill="none" stroke="{DPINK}" stroke-width="1.4" stroke-dasharray="1 7" stroke-linecap="round" opacity=".6"/>
+<g id="falling-petals">{petal(560, 470, 16, 40, PINK)}{petal(640, 420, 11, 200, DPINK, .9)}{petal(980, 300, 12, 80, PINK, .9)}{petal(380, 390, 10, -60, PINK, .8)}{petal(460, 560, 12, 120, DPINK, .8)}{petal(900, 520, 14, -30, PINK, .9)}</g>
+{img("udgam-logo", 52, 40, 230)}
 <g id="headline">
 <text x="60" y="586" font-family="Space Mono" font-weight="700" font-size="18" letter-spacing="2.6" fill="{INK}">NIT SIKKIM · THE ANNUAL CULTURAL FEST</text>
 <text x="54" y="730" font-family="Instrument Serif" font-size="164" letter-spacing="-3" fill="{INK}">The bloom</text>

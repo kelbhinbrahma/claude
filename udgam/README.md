@@ -4,7 +4,7 @@
 |---|---|---|
 | `01-riso-collage.svg` | Risograph + type collage: halftone blossom, ransom-note letters, ticket stub | "The bloom is back —" |
 | `02-abstract-modern.svg` | Abstract modernism × mixed media: arch window with torn-paper Himalaya, prayer flags, halftone sun, pencil scribble, paper-cut blossom, record sleeve, brush stroke | "Where the mountains meet the music." |
-| `03-minimal-bloom.svg` | Minimalism: one cherry branch, editorial serif | "The bloom returns." |
+| `03-minimal-bloom.svg` | Minimalism: cherry branch over a blush sun, line-drawn Himalaya, numbered line-up, editorial serif | "The bloom returns." |
 | `04-night-concert.svg` | Gradient + grain night concert: spotlight, neon-glow title, Himalayan sunset, crowd | "Louder than spring" |
 | `05-retro-carnival.svg` | Retro carnival: sunburst, ferris wheel, bunting, admit-one ticket | "Come for the music, stay for the magic." |
 
