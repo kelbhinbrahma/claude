@@ -182,9 +182,9 @@ def p1():
 {blossom(804, 342, 330, "none", rot=8, stroke=BLUE, sw=3, blend="multiply")}</g>
 {halftone(205, 790, 210, 10, 4.6, YEL, 45, 1.1, id="riso-sun")}
 <g id="masthead">{img("udgam-logo", 46, 30, 215)}
-{torn(690, 34, 350, 98, PAPER, -1.5, seed=21)}
+{torn(690, 38, 350, 72, PAPER, -1.5, seed=21)}
 <g font-family="Space Mono" font-weight="700" font-size="17" letter-spacing="2" fill="{INK}" text-anchor="end">
-<text x="1026" y="64">NIT SIKKIM PRESENTS</text><text x="1026" y="90">ANNUAL CULTURAL FEST</text><text x="1026" y="116" fill="{PINK}">ISSUE Nº 2K26</text></g></g>
+<text x="1026" y="68">NIT SIKKIM PRESENTS</text><text x="1026" y="94" fill="{PINK}">ANNUAL CULTURAL FEST</text></g></g>
 <g id="headline-UDGAM">{tiles}</g>
 {tape(150, 168, 120, -18)}{tape(845, 404, 110, 14)}
 <g id="year-label" transform="rotate(3 840 470)">{torn(700, 438, 320, 92, INK, 0, seed=11)}
